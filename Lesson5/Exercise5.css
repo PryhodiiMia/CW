@@ -1,0 +1,14 @@
+body {
+  background-color: yellow;
+  background-image: url(img1.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-attachment: fixed;
+}
+h1 {
+  color: red;
+  background-color: blue;
+}
+p {
+  color: green;
+}
