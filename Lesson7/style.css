@@ -1,0 +1,28 @@
+body{
+    background-color: #9ad6ee;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    color: #ff931f;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+}
+h2{
+    color: #ff931f;
+    text-align: center;
+    margin-top: 48px;
+    font-weight: bolder;
+    font-size: 30px;
+}
+p{
+    font-size: 17px;
+}
+.img1{
+    height: 250px;
+    margin-right: 10px;
+}
+.img2{
+    height: 400px;
+    margin-left: 10px;
+}
