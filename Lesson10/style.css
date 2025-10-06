@@ -1,0 +1,35 @@
+.circle1{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50px;
+}
+.circle2{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 50px;
+}
+.circle3{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50px;
+}
+.circle4{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    border-radius: 50px;
+}
+.border-img{
+    margin-top: 20px;
+    border: 4px solid red;
+    width: 450px;
+    height: 180px;
+    border-radius: 0px 40px;
+}
