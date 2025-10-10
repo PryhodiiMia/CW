@@ -1,0 +1,30 @@
+body{
+    background-color: yellow;
+}
+.a{
+    color: blue;
+    font-size: 15px;
+}
+h1{
+    color: green;
+}
+.b{
+    font-size: 12px;
+    color: green;
+}
+.c{
+    font-size: 25px;
+    color: green;
+}
+.d{
+    font-size: 35px;
+    color: green;
+}
+.e{
+    font-size: 35px;
+    color: red;
+}
+.f{
+    font-size: 35px;
+    color: green;
+}
