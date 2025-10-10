@@ -1,0 +1,21 @@
+let first = 23;
+let second = 52;
+let sum = first + second;
+alert("Suma = " + sum);
+let sub = first - second;
+alert("Sub = " + sub);
+let mult = first * second;
+alert("Mult = " + mult);
+let div = first / second;
+alert("Div = " + div);
+// _____________2 cпосіб_____________
+let a1 = +prompt("Enter first number", 0);
+let b1 = +prompt("Enter second number", 0);
+sum = a1 + b1;
+sub = a1 - b1;
+mult = a1 * b1;
+div = a1 / b1;
+alert("Sum = " + sum);
+alert("Sub = " + sub);
+alert("Mult = " + mult);
+alert("Div = " + div);
