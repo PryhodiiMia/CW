@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
+      let cnv = document.getElementById("canvas");
+      let ctx = cnv.getContext("2d");
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = "orange";
+      ctx.strokeRect(80, 40, 260, 180);
+      ctx.strokeRect(100, 60, 220, 140);
+      ctx.strokeRect(120, 80, 180, 100);
+      ctx.strokeRect(150, 110, 120, 40);
+      ctx.strokeRect(170, 125, 80, 10);
+    </script>
+  </body>
+</html>
