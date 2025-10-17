@@ -1,0 +1,14 @@
+let cnv = document.getElementById("canvas");
+let ctx = cnv.getContext("2d");
+ctx.lineWidth = 16;
+ctx.fillStyle = "Red";
+ctx.strokeStyle = "Blue";
+ctx.beginPath();
+ctx.moveTo(100, 100);
+ctx.lineTo(100, 60);
+ctx.lineTo(130, 30);
+ctx.lineTo(160, 60);
+ctx.lineTo(160, 100);
+ctx.lineTo(92, 100);
+ctx.fill();
+ctx.stroke();
