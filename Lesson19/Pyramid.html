@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
+      let cnv = document.getElementById("canvas");
+      let ctx = cnv.getContext("2d");
+      ctx.fillStyle = "red";
+      ctx.fillRect(150, 20, 120, 40);
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(120, 60, 180, 40);
+      ctx.fillStyle = "green";
+      ctx.fillRect(90, 100, 240, 50);
+      ctx.fillStyle = "blue";
+      ctx.fillRect(60, 150, 300, 60);
+    </script>
+  </body>
+</html>
