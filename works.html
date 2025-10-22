@@ -172,6 +172,7 @@
         align-items: center;
         justify-content: center;
         z-index: 100;
+        padding: 10px;
       }
 
       .modal:target {
@@ -183,11 +184,12 @@
         background: var(--bg);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 20px;
-        padding: 30px;
+        padding: 25px;
         text-align: center;
+        width: 100%;
         max-width: 400px;
-        animation: fadeIn 0.5s ease forwards;
         box-shadow: 0 0 25px var(--violet);
+        animation: fadeIn 0.5s ease forwards;
       }
 
       .modal-content h2 {
@@ -227,95 +229,16 @@
       @media (max-width: 480px) {
         h1 {
           font-size: 1.8em;
-          margin-bottom: 8px;
-        }
-
-        p.subtitle {
-          font-size: 0.9em;
-          margin-bottom: 25px;
-        }
-
-        .works {
-          gap: 15px;
-        }
-
-        .card {
-          padding: 15px;
-          height: auto;
-        }
-
-        .card h3 {
-          font-size: 1em;
-        }
-
-        .card p {
-          font-size: 0.8em;
-        }
-
-        a.button {
-          padding: 10px 24px;
-          font-size: 0.9em;
-        }
-
-        .bg {
-          width: 300px;
-          height: 300px;
-          filter: blur(100px);
         }
 
         .modal-content {
-          max-width: 90%;
           padding: 20px;
+          max-width: 90%;
         }
 
         .modal-content a {
-          width: 80%;
-          padding: 8px 15px;
-          font-size: 0.85em;
-        }
-      }
-
-      @media (max-width: 360px) {
-        h1 {
-          font-size: 1.5em;
-        }
-
-        p.subtitle {
-          font-size: 0.85em;
-        }
-
-        .card h3 {
+          width: 85%;
           font-size: 0.9em;
-        }
-
-        .card p {
-          font-size: 0.75em;
-        }
-
-        a.button {
-          padding: 8px 20px;
-          font-size: 0.85em;
-        }
-
-        .bg {
-          width: 250px;
-          height: 250px;
-          filter: blur(80px);
-        }
-        .modal {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0; /* прибирає можливий відступ */
-        }
-
-        .modal-content {
-          width: 90%;
-          max-width: 320px; /* щоб на екрані 360px вікно виглядало гарно по центру */
-          margin: 0 auto;
-          position: relative;
-          left: 0;
-          transform: none;
         }
       }
     </style>
