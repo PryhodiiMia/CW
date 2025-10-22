@@ -1,262 +1,413 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мої роботи</title>
-    <style>
-      :root {
-        --bg: #050007;
-        --violet: #7c3aed;
-        --lightviolet: #c084fc;
-        --text: #ffffff;
-        --card: rgba(255, 255, 255, 0.05);
-      }
 
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: radial-gradient(circle at 20% 10%, #16002b, var(--bg) 80%);
-        color: var(--text);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 20px;
-        overflow-x: hidden;
-        position: relative;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мої роботи</title>
+  <style>
+    :root {
+      --bg: #050007;
+      --violet: #7c3aed;
+      --lightviolet: #c084fc;
+      --text: #ffffff;
+      --card: rgba(255, 255, 255, 0.05);
+    }
 
-      h1 {
-        font-size: 2.4em;
-        color: var(--lightviolet);
-        margin-bottom: 10px;
-        animation: fadeDown 1.5s ease forwards;
-      }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at 20% 10%, #16002b, var(--bg) 80%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-      p.subtitle {
-        color: #ccc;
-        margin-bottom: 40px;
-        animation: fadeDown 1.5s ease forwards;
-        animation-delay: 0.3s;
-      }
+    h1 {
+      font-size: 2.4em;
+      color: var(--lightviolet);
+      margin-bottom: 10px;
+      animation: fadeDown 1.5s ease forwards;
+    }
 
-      @keyframes fadeDown {
-        from {
-          opacity: 0;
-          transform: translateY(-15px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    p.subtitle {
+      color: #ccc;
+      margin-bottom: 40px;
+      animation: fadeDown 1.5s ease forwards;
+      animation-delay: 0.3s;
+    }
 
-      .works {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        width: 100%;
-        max-width: 1000px;
-        animation: fadeIn 1.5s ease forwards;
-        animation-delay: 0.5s;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 20px;
-        text-align: center;
-        height: 130px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-      }
-
-      .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 0 25px var(--violet);
-      }
-
-      .card h3 {
-        color: var(--lightviolet);
-        margin-bottom: 10px;
-      }
-
-      .card p {
-        color: #bbb;
-        font-size: 0.9em;
-        line-height: 1.4;
-      }
-
-      a.button {
-        display: inline-block;
-        margin-top: 50px;
-        padding: 12px 28px;
-        background: linear-gradient(90deg, var(--violet), var(--lightviolet));
-        color: #fff;
-        border-radius: 30px;
-        text-decoration: none;
-        font-size: 1em;
-        transition: 0.3s;
-        box-shadow: 0 0 15px var(--violet);
-      }
-
-      a.button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 25px var(--lightviolet);
-      }
-
-      .bg {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        filter: blur(150px);
-        opacity: 0.25;
-        z-index: -1;
-        animation: bgMove 10s ease-in-out infinite alternate;
-      }
-
-      .bg1 {
-        background: var(--violet);
-        top: -150px;
-        left: -100px;
-      }
-      .bg2 {
-        background: var(--lightviolet);
-        bottom: -150px;
-        right: -100px;
-      }
-
-      @keyframes bgMove {
-        0% {
-          transform: translate(0, 0);
-        }
-        100% {
-          transform: translate(40px, 60px);
-        }
-      }
-
-      /* Модальне вікно */
-      .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
+    @keyframes fadeDown {
+      from {
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 100;
+        transform: translateY(-15px);
       }
 
-      .modal:target {
+      to {
         opacity: 1;
-        pointer-events: auto;
+        transform: translateY(0);
+      }
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1000px;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      .modal-content {
-        background: var(--bg);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        text-align: center;
-        max-width: 400px;
-        animation: fadeIn 0.5s ease forwards;
-        box-shadow: 0 0 25px var(--violet);
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      height: 130px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px var(--violet);
+    }
+
+    .card h3 {
+      color: var(--lightviolet);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #bbb;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 50px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, var(--violet), var(--lightviolet));
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: 0.3s;
+      box-shadow: 0 0 15px var(--violet);
+    }
+
+    a.button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--lightviolet);
+    }
+
+    .bg {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.25;
+      z-index: -1;
+      animation: bgMove 10s ease-in-out infinite alternate;
+    }
+
+    .bg1 {
+      background: var(--violet);
+      top: -150px;
+      left: -100px;
+    }
+
+    .bg2 {
+      background: var(--lightviolet);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    @keyframes bgMove {
+      0% {
+        transform: translate(0, 0);
       }
 
-      .modal-content h2 {
-        color: var(--lightviolet);
-        margin-bottom: 15px;
+      100% {
+        transform: translate(40px, 60px);
       }
+    }
 
-      .modal-content a {
-        display: block;
-        margin: 10px auto;
-        padding: 10px 20px;
-        background: var(--violet);
-        border-radius: 25px;
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-        width: 70%;
-      }
+    /* Модальне вікно */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
 
-      .modal-content a:hover {
-        background: var(--lightviolet);
-      }
+    .modal:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-      .close {
-        display: inline-block;
-        margin-top: 15px;
-        color: #aaa;
-        text-decoration: none;
-        font-size: 0.9em;
-      }
+    .modal-content {
+      background: var(--bg);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 0.5s ease forwards;
+      box-shadow: 0 0 25px var(--violet);
+    }
 
-      .close:hover {
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="bg bg1"></div>
-    <div class="bg bg2"></div>
+    .modal-content h2 {
+      color: var(--lightviolet);
+      margin-bottom: 15px;
+    }
 
-    <h1>Мої роботи</h1>
-    <p class="subtitle">Тут зібрані мої шкільні проєкти та завдання.</p>
+    .modal-content a {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: var(--violet);
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      width: 70%;
+    }
 
-    <div class="works">
-      <a href="#lesson1" class="card">
-        <h3>Lesson 1</h3>
-        <p>Основи HTML та структура документа.</p>
-      </a>
+    .modal-content a:hover {
+      background: var(--lightviolet);
+    }
 
-      <a href="./Lesson2/index.html" target="_blank" class="card">
-        <h3>Lesson 2</h3>
-        <p>Робота з текстом у HTML.</p>
-      </a>
+    .close {
+      display: inline-block;
+      margin-top: 15px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
 
-      <a href="./Lesson3/index.html" target="_blank" class="card">
-        <h3>Lesson 3</h3>
-        <p>Списки у HTML.</p>
-      </a>
+    .close:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg bg1"></div>
+  <div class="bg bg2"></div>
+
+  <h1>My works</h1>
+  <p class="subtitle">Here are my school projects and assignments.</p>
+
+  <div class="works">
+    <a href="#lesson1" class="card">
+      <h3>Lesson 1</h3>
+      <p>HTML basics and document structure.</p>
+    </a>
+
+    <a href="./Lesson2/index.html" target="_blank" class="card">
+      <h3>Lesson 2</h3>
+      <p>Working with text in HTML.</p>
+    </a>
+
+    <a href="./Lesson3/index.html" target="_blank" class="card">
+      <h3>Lesson 3</h3>
+      <p>Lists in HTML.</p>
+    </a>
+
+    <a href="./Lesson4/h1-p-1.html" target="_blank" class="card">
+      <h3>Lesson 4</h3>
+      <p>CSS basics.</p>
+    </a>
+
+    <a href="#lesson5" target="_blank" class="card">
+      <h3>Lesson 5</h3>
+      <p>Background and color in CSS.</p>
+    </a>
+
+    <a href="./Lesson6/index.html" target="_blank" class="card">
+      <h3>Lesson 6</h3>
+      <p>Creation of tables.</p>
+    </a>
+
+    <a href="./Lesson7/index.html" target="_blank" class="card">
+      <h3>Lesson 7</h3>
+      <p>Image in HTML.</p>
+    </a>
+
+    <a href="./Lesson8/index.html" target="_blank" class="card">
+      <h3>Lesson 8</h3>
+      <p>External hyperlinks.</p>
+    </a>
+
+    <a href="./Lesson9/index.html" target="_blank" class="card">
+      <h3>Lesson 9</h3>
+      <p>Practical work.</p>
+    </a>
+
+    <a href="./Lesson10/index.html" target="_blank" class="card">
+      <h3>Lesson 10</h3>
+      <p>Block element properties.</p>
+    </a>
+
+    <a href="#lesson11" target="_blank" class="card">
+      <h3>Lesson 11</h3>
+      <p>Block element properties.</p>
+    </a>
+
+    <a href="./Lesson12/index.html" target="_blank" class="card">
+      <h3>Lesson 12</h3>
+      <p>Multimedia on web pages.</p>
+    </a>
+
+    <a href="./Lesson13/index.html" target="_blank" class="card">
+      <h3>Lesson 13</h3>
+      <p>Moving line.</p>
+    </a>
+
+    <a href="./Lesson14/index.html" target="_blank" class="card">
+      <h3>Lesson 14</h3>
+      <p>Basic concepts of JavaScript.</p>
+    </a>
+
+    <a href="./Lesson15/index.html" target="_blank" class="card">
+      <h3>Lesson 15</h3>
+      <p>Arithmetic and user interaction.</p>
+    </a>
+
+    <a href="./lesson16/index.html" target="_blank" class="card">
+      <h3>Lesson 16</h3>
+      <p>Branching in Javascript.</p>
+    </a>
+
+    <a href="./lesson17/index.html" target="_blank" class="card">
+      <h3>Lesson 17</h3>
+      <p>Loops in Javascript.</p>
+    </a>
+
+    <a href="./Lesson18/index.html" target="_blank" class="card">
+      <h3>Lesson 18</h3>
+      <p>Document Object Model.</p>
+    </a>
+
+    <a href="#lesson19" target="_blank" class="card">
+      <h3>Lesson 19</h3>
+      <p>Creating graphics using the HTML Canvas tool.</p>
+    </a>
+
+    <a href="#lesson20" target="_blank" class="card">
+      <h3>Lesson 20</h3>
+      <p>Drawing paths.</p>
+    </a>
+
+    <a href="#lesson21" target="_blank" class="card">
+      <h3>Lesson 21</h3>
+      <p>Creating arcs and circles.</p>
+    </a>
+  </div>
+
+  <a href="index.html" class="button">⬅ Назад на головну</a>
+
+  <!-- Модальне вікно для Lesson 1 -->
+  <div id="lesson1" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 1 — Select a task</h2>
+      <a href="./Lesson1/index.html">Task 1</a>
+      <a href="./Lesson1/Завдання1.html">Task 2</a>
+      <a href="./Lesson1/Завдання2.html">Task 3</a>
+      <a href="./Lesson1/Завдання3.html">Task 4</a>
+      <a href="./Lesson1/Завдання5.html">Task 5</a>
+      <a href="#" class="close">Закрити</a>
     </div>
+  </div>
 
-    <a href="index.html" class="button">⬅ Назад на головну</a>
-
-    <!-- Модальне вікно для Lesson 1 -->
-    <div id="lesson1" class="modal">
-      <div class="modal-content">
-        <h2>Lesson 1 — Select a task</h2>
-        <a href="./Lesson1/index.html">Task 1</a>
-        <a href="./Lesson1/Завдання1.html">Task 2</a>
-        <a href="./Lesson1/Завдання2.html">Task 3</a>
-        <a href="./Lesson1/Завдання3.html">Task 4</a>
-        <a href="./Lesson1/Завдання5.html">Task 5</a>
-        <a href="#" class="close">Закрити</a>
-      </div>
+  <div id="lesson5" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 5 — Select a task</h2>
+      <a href="./Lesson5/Exercise1.html">Task 1</a>
+      <a href="./Lesson5/Exercise2.html">Task 2</a>
+      <a href="./Lesson5/Exercise3.html">Task 3</a>
+      <a href="./Lesson5/Exercise4.html">Task 4</a>
+      <a href="./Lesson5/Exercise5.html">Task 5</a>
+      <a href="#" class="close">Закрити</a>
     </div>
-  </body>
+  </div>
+
+  <div id="lesson11" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 11 — Select a task</h2>
+      <a href="./Lesson11/index.html">Task 1</a>
+      <a href="./Lesson11/index2.html">Task 2</a>
+      <a href="#" class="close">Закрити</a>
+    </div>
+  </div>
+
+  <div id="lesson19" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 19 — Select a task</h2>
+      <a href="./Lesson19/index.html">Task 1</a>
+      <a href="./Lesson19/index2.html">Task 2</a>
+      <a href="./Lesson19/index3.html">Task 3</a>
+      <a href="./Lesson19/index4.html">Task 4</a>
+      <a href="./Lesson19/Pyramid.html">Practical 1</a>
+      <a href="./Lesson19/Tunnel.html">Practical 2</a>
+      <a href="#" class="close">Закрити</a>
+    </div>
+  </div>
+
+  <div id="lesson20" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 20 — Select a task</h2>
+      <a href="./Lesson20/index.html">Task 1</a>
+      <a href="./Lesson20/index2.html">Task 2</a>
+      <a href="./Lesson20/drawings.html">Practical 1</a>
+      <a href="#" class="close">Закрити</a>
+    </div>
+  </div>
+
+  <div id="lesson21" class="modal">
+    <div class="modal-content">
+      <h2>Lesson 21 — Select a task</h2>
+      <a href="./Lesson21/index.html">Task 1</a>
+      <a href="./Lesson21/index2.html">Task 2</a>
+      <a href="./Lesson21/snowman.html">Practical 1</a>
+      <a href="#" class="close">Закрити</a>
+    </div>
+  </div>
+</body>
+
 </html>
