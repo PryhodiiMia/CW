@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мої роботи</title>
+    <style>
+      :root {
+        --bg: #050007;
+        --violet: #7c3aed;
+        --lightviolet: #c084fc;
+        --text: #ffffff;
+        --card: rgba(255, 255, 255, 0.05);
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(circle at 20% 10%, #16002b, var(--bg) 80%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      h1 {
+        font-size: 2.4em;
+        color: var(--lightviolet);
+        margin-bottom: 10px;
+        animation: fadeDown 1.5s ease forwards;
+      }
+
+      p.subtitle {
+        color: #ccc;
+        margin-bottom: 40px;
+        animation: fadeDown 1.5s ease forwards;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .works {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        width: 100%;
+        max-width: 1000px;
+        animation: fadeIn 1.5s ease forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        height: 130px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px var(--violet);
+      }
+
+      .card h3 {
+        color: var(--lightviolet);
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #bbb;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+
+      a.button {
+        display: inline-block;
+        margin-top: 50px;
+        padding: 12px 28px;
+        background: linear-gradient(90deg, var(--violet), var(--lightviolet));
+        color: #fff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1em;
+        transition: 0.3s;
+        box-shadow: 0 0 15px var(--violet);
+      }
+
+      a.button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px var(--lightviolet);
+      }
+
+      .bg {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        filter: blur(150px);
+        opacity: 0.25;
+        z-index: -1;
+        animation: bgMove 10s ease-in-out infinite alternate;
+      }
+
+      .bg1 {
+        background: var(--violet);
+        top: -150px;
+        left: -100px;
+      }
+      .bg2 {
+        background: var(--lightviolet);
+        bottom: -150px;
+        right: -100px;
+      }
+
+      @keyframes bgMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(40px, 60px);
+        }
+      }
+
+      /* Модальне вікно */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+      }
+
+      .modal:target {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-content {
+        background: var(--bg);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        animation: fadeIn 0.5s ease forwards;
+        box-shadow: 0 0 25px var(--violet);
+      }
+
+      .modal-content h2 {
+        color: var(--lightviolet);
+        margin-bottom: 15px;
+      }
+
+      .modal-content a {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: var(--violet);
+        border-radius: 25px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        width: 70%;
+      }
+
+      .modal-content a:hover {
+        background: var(--lightviolet);
+      }
+
+      .close {
+        display: inline-block;
+        margin-top: 15px;
+        color: #aaa;
+        text-decoration: none;
+        font-size: 0.9em;
+      }
+
+      .close:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg bg1"></div>
+    <div class="bg bg2"></div>
+
+    <h1>Мої роботи</h1>
+    <p class="subtitle">Тут зібрані мої шкільні проєкти та завдання.</p>
+
+    <div class="works">
+      <a href="#lesson1" class="card">
+        <h3>Lesson 1</h3>
+        <p>Основи HTML та структура документа.</p>
+      </a>
+
+      <a href="./Lesson2/index.html" target="_blank" class="card">
+        <h3>Lesson 2</h3>
+        <p>Робота з текстом у HTML.</p>
+      </a>
+
+      <a href="./Lesson3/index.html" target="_blank" class="card">
+        <h3>Lesson 3</h3>
+        <p>Списки у HTML.</p>
+      </a>
+    </div>
+
+    <a href="index.html" class="button">⬅ Назад на головну</a>
+
+    <!-- Модальне вікно для Lesson 1 -->
+    <div id="lesson1" class="modal">
+      <div class="modal-content">
+        <h2>Lesson 1 — Select a task</h2>
+        <a href="./Lesson1/index.html">Task 1</a>
+        <a href="./Lesson1/Завдання1.html">Task 2</a>
+        <a href="./Lesson1/Завдання2.html">Task 3</a>
+        <a href="./Lesson1/Завдання3.html">Task 4</a>
+        <a href="./Lesson1/Завдання5.html">Task 5</a>
+        <a href="#" class="close">Закрити</a>
+      </div>
+    </div>
+  </body>
+</html>
