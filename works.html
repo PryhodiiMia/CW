@@ -223,6 +223,87 @@
     .close:hover {
       color: #fff;
     }
+
+    /* Мобильная верстка */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+      }
+
+      p.subtitle {
+        font-size: 0.9em;
+        margin-bottom: 25px;
+      }
+
+      .works {
+        gap: 15px;
+      }
+
+      .card {
+        padding: 15px;
+        height: auto;
+      }
+
+      .card h3 {
+        font-size: 1em;
+      }
+
+      .card p {
+        font-size: 0.8em;
+      }
+
+      a.button {
+        padding: 10px 24px;
+        font-size: 0.9em;
+      }
+
+      .bg {
+        width: 300px;
+        height: 300px;
+        filter: blur(100px);
+      }
+
+      .modal-content {
+        max-width: 90%;
+        padding: 20px;
+      }
+
+      .modal-content a {
+        width: 80%;
+        padding: 8px 15px;
+        font-size: 0.85em;
+      }
+    }
+
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p.subtitle {
+        font-size: 0.85em;
+      }
+
+      .card h3 {
+        font-size: 0.9em;
+      }
+
+      .card p {
+        font-size: 0.75em;
+      }
+
+      a.button {
+        padding: 8px 20px;
+        font-size: 0.85em;
+      }
+
+      .bg {
+        width: 250px;
+        height: 250px;
+        filter: blur(80px);
+      }
+    }
   </style>
 </head>
 

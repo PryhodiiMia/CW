@@ -107,6 +107,55 @@
       0% { transform: translate(0,0); }
       100% { transform: translate(30px, 40px); }
     }
+
+    /* Мобільна версія */
+    @media (max-width: 480px) {
+      .photo {
+        width: 150px;
+        height: 150px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1em;
+        max-width: 90%;
+        margin-bottom: 20px;
+      }
+
+      a.button {
+        padding: 10px 24px;
+        font-size: 0.95em;
+      }
+
+      .bg {
+        width: 300px;
+        height: 300px;
+        filter: blur(100px);
+      }
+    }
+
+    @media (max-width: 360px) {
+      .photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      h1 {
+        font-size: 1.3em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
+
+      a.button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
