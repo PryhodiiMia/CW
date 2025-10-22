@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="300" height="200"></canvas>
+    <script type="text/javascript">
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = "Blue";
+        ctx.beginPath();
+        ctx.arc(125, 50, 30, 0, Math.PI, false);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
